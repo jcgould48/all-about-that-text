@@ -43,12 +43,3 @@ const biggify = function(num) {
   
     return newStr;
   }
-  
-  
-  module.exports = {
-    biggify,
-    nasafy,
-    reversify,
-    titleify,
-    crazify,
-  }
