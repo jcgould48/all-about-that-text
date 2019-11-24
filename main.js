@@ -1,44 +1,53 @@
 //functions
+const clearResult = function(){
+document.querySelector('.result').innerHTML = '';
+}
 
-// const inputText = document.querySelector('#user-input').value   
+const clearSearch = function(){
+document.querySelector('#user-input').value=''
+}
+
 
 const bigButton = function (){
-let inputText = document.querySelector('#user-input').value
-let number = Number(inputText);
-document.querySelector('.result').innerText = biggify(number);
-document.querySelector('#user-input').value=''
+    clearResult();
+    let inputText = document.querySelector('#user-input').value
+    let number = Number(inputText);
+    document.querySelector('.result').innerText = biggify(number);
+    clearSearch();
 }
 
 const nasaBtn = function (){
-let inputText = document.querySelector('#user-input').value
-let number = Number(inputText);
-document.querySelector('.result').innerText = nasafy(number);
-document.querySelector('#user-input').value=''
+    clearResult();
+    let inputText = document.querySelector('#user-input');
+    let result = nasafy(Number(inputText.value))
+    for(let i = 0; i<result.length; i++){
+        let newLi = document.createElement('li')
+        newLi.innerText = result[i]
+        document.querySelector('.result').appendChild(newLi)
+    }
+    clearSearch();
 }
 
 const crazyBtn = function (){
+clearResult();
 let inputText = document.querySelector('#user-input').value
-
 document.querySelector('.result').innerText = crazify(inputText);
-document.querySelector('#user-input').value=''
+clearSearch();
 }
 
 const reverseBtn = function (){
+clearResult();
 let inputText = document.querySelector('#user-input').value
-
 document.querySelector('.result').innerText = reversify(inputText);
-document.querySelector('#user-input').value=''
+clearSearch();
 }
 
 const titleBtn = function (){
-let inputText = document.querySelector('#user-input').value
-
+    clearResult();
+    let inputText = document.querySelector('#user-input').value
 document.querySelector('.result').innerText = titleify(inputText);
-document.querySelector('#user-input').value=''
+clearSearch();
 }
-
-
-
 
 
 
